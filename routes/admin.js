@@ -5,13 +5,11 @@ const { getAllUsers, deleteUser, getAdmin, orderStatusController } = require("..
 
 router = express.Router();
 
-router.get("/alluser/:email", protect,verifyAdmin, getAllUsers); //verifyAdmin, protect,
-router.delete("/deleteUser/:id/:email",protect,verifyAdmin, deleteUser); //verifyAdmin, protect,
-router.get("/isAdmin/:email", getAdmin); // verifyAdmin,  protect,
+router.get("/alluser/:email", protect,verifyAdmin, getAllUsers); 
+router.delete("/deleteUser/:id/:email",protect,verifyAdmin, deleteUser); 
+router.get("/isAdmin/:email", getAdmin); 
 router.put(
     "/order-status/:orderId",
-    // requireSignIn,
-    // isAdmin,
     orderStatusController
   );
 
